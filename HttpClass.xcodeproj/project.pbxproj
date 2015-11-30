@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5048731B18BC5F00599F7F /* AppleToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5048721B18BC5F00599F7F /* AppleToken.m */; };
+		7B90D0F81B632D58007366CD /* info.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B9606251B1622FE001AE5B9 /* info.h */; };
+		7B90D0F91B632D6E007366CD /* AppleToken.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B5048711B18BC5F00599F7F /* AppleToken.h */; };
 		7B96060F1B162166001AE5B9 /* HttpClass.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7B96060E1B162166001AE5B9 /* HttpClass.h */; };
 		7B9606111B162166001AE5B9 /* HttpClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9606101B162166001AE5B9 /* HttpClass.m */; };
 		7B9606171B162166001AE5B9 /* libHttpClass.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B96060B1B162166001AE5B9 /* libHttpClass.a */; };
+		7B9606271B16247A001AE5B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9606261B16247A001AE5B9 /* UIKit.framework */; };
+		7B9606291B162486001AE5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9606281B162486001AE5B9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7B90D0F91B632D6E007366CD /* AppleToken.h in CopyFiles */,
+				7B90D0F81B632D58007366CD /* info.h in CopyFiles */,
 				7B96060F1B162166001AE5B9 /* HttpClass.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,11 +43,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7B5048711B18BC5F00599F7F /* AppleToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleToken.h; sourceTree = "<group>"; };
+		7B5048721B18BC5F00599F7F /* AppleToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleToken.m; sourceTree = "<group>"; };
 		7B96060B1B162166001AE5B9 /* libHttpClass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHttpClass.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B96060E1B162166001AE5B9 /* HttpClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClass.h; sourceTree = "<group>"; };
 		7B9606101B162166001AE5B9 /* HttpClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpClass.m; sourceTree = "<group>"; };
 		7B9606161B162166001AE5B9 /* HttpClassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HttpClassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B96061C1B162166001AE5B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B9606251B1622FE001AE5B9 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
+		7B9606261B16247A001AE5B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7B9606281B162486001AE5B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B9606291B162486001AE5B9 /* Foundation.framework in Frameworks */,
+				7B9606271B16247A001AE5B9 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +78,9 @@
 		7B9606021B162166001AE5B9 = {
 			isa = PBXGroup;
 			children = (
+				7B9606281B162486001AE5B9 /* Foundation.framework */,
+				7B9606261B16247A001AE5B9 /* UIKit.framework */,
 				7B96060D1B162166001AE5B9 /* HttpClass */,
-				7B96061A1B162166001AE5B9 /* HttpClassTests */,
 				7B96060C1B162166001AE5B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,24 +99,11 @@
 			children = (
 				7B96060E1B162166001AE5B9 /* HttpClass.h */,
 				7B9606101B162166001AE5B9 /* HttpClass.m */,
+				7B9606251B1622FE001AE5B9 /* info.h */,
+				7B5048711B18BC5F00599F7F /* AppleToken.h */,
+				7B5048721B18BC5F00599F7F /* AppleToken.m */,
 			);
 			path = HttpClass;
-			sourceTree = "<group>";
-		};
-		7B96061A1B162166001AE5B9 /* HttpClassTests */ = {
-			isa = PBXGroup;
-			children = (
-				7B96061B1B162166001AE5B9 /* Supporting Files */,
-			);
-			path = HttpClassTests;
-			sourceTree = "<group>";
-		};
-		7B96061B1B162166001AE5B9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7B96061C1B162166001AE5B9 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5048731B18BC5F00599F7F /* AppleToken.m in Sources */,
 				7B9606111B162166001AE5B9 /* HttpClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +298,7 @@
 		7B9606201B162166001AE5B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -305,6 +308,8 @@
 		7B9606211B162166001AE5B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -362,6 +367,7 @@
 				7B9606211B162166001AE5B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B9606221B162166001AE5B9 /* Build configuration list for PBXNativeTarget "HttpClassTests" */ = {
 			isa = XCConfigurationList;
@@ -370,6 +376,7 @@
 				7B9606241B162166001AE5B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
