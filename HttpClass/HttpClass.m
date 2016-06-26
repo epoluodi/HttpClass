@@ -90,7 +90,7 @@
     
     //定义
     NSHTTPURLResponse* urlResponse = nil;
-           NSError *error = [[NSError alloc] init];
+    NSError *error = nil;
     //同步提交:POST提交并等待返回值（同步），返回值是NSData类型。
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     
