@@ -8,7 +8,7 @@
 
 #import "HttpClass.h"
 
-
+#define HTTP_CONTENT_BOUNDARY @"WANPUSH"
 
 
 
@@ -107,7 +107,34 @@
     return responseData;
 }
 
-
+-(NSData*)UploadFile:(NSString *)filename FileData:(NSData *)data
+{
+ 
+    NSURL* url = [NSURL URLWithString:WebServiceUrl];
+    NSString* strBodyBegin = [NSString stringWithFormat:@"--%@\nContent-Disposition: form-data; name=\"%@\"; filename=\"%@\"\nContent-Type: %@\n\n", HTTP_CONTENT_BOUNDARY, @"file",  filename, @"jpg"];
+    NSString* strBodyEnd = [NSString stringWithFormat:@"\n--%@--",HTTP_CONTENT_BOUNDARY];
+    
+    NSMutableData *httpBody = [NSMutableData data];
+    [httpBody appendData:[strBodyBegin dataUsingEncoding:NSUTF8StringEncoding]];
+    [httpBody appendData:data];
+    [httpBody appendData:[strBodyEnd dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSMutableURLRequest* httpPutRequest = [[NSMutableURLRequest alloc] init];
+    [httpPutRequest setURL:url];
+    [httpPutRequest setHTTPMethod:@"POST"];
+    [httpPutRequest setTimeoutInterval: 60000];
+    [httpPutRequest setValue:[NSString stringWithFormat:@"%@", @(httpBody.length)] forHTTPHeaderField:@"Content-Length"];
+    [httpPutRequest setValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",HTTP_CONTENT_BOUNDARY] forHTTPHeaderField:@"Content-Type"];
+    httpPutRequest.HTTPBody = httpBody;
+    
+    NSHTTPURLResponse* httpResponse = nil;
+    NSError *error =nil;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:httpPutRequest returningResponse:&httpResponse error:&error];
+    if (error.code !=0)
+        return nil;
+   
+    return responseData;
+}
 
 +(NSString *)httprequestForGet:(NSString *)url
 {

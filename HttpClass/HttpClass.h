@@ -35,7 +35,7 @@
                 delegate:(NSObject<Httpdelegate> *)delegate;
 -(NSString *)getXmlString:(NSData *)data;
 +(NSString *)httprequestForGet:(NSString *)url;
-
+-(NSData*)UploadFile:(NSString *)filename FileData:(NSData*)data;
 
 
 
